@@ -11,6 +11,7 @@ public class Prob {
 	
 	public static void main(String[] args) {
 		
+		// 지역변수 (local variable) 초기화 해주기
 		int largest = 0;
 		int smallest = 10000;
 		int sum = 0;
@@ -18,21 +19,22 @@ public class Prob {
 		
 		int[] array = new int[args.length];
 		
-		for(int i = 0; i < args.length; i++) {
+		for(int i = 0; i < array.length; i++) {
 			
-			System.out.print(args[i]+",");
+			array[i] = Integer.parseInt(args[i]);
+			           // Integer 클래스 명으로 접근 => static 메소드
+			System.out.print(array[i] + ",");
+			sum += array[i];
 			
-			int intArgs = Integer.parseInt(args[i]);
-			smallest = Integer.parseInt(args[0]);
-			
-			if (intArgs > largest) {
-				largest = intArgs;
-			} else if (intArgs < smallest) {
-				smallest = intArgs;
+			if (array[i] > largest) {
+				largest = array[i]; // if & else 에 실행문이 한 줄이면 { } 생략 가능
 			}
-			sum += intArgs;
+			if (array[i] < smallest) {
+				smallest = array[i];
+			}
 		}
-		average = (double) sum / args.length;
+		
+		average = (double) sum / array.length; // 실수로 값이 나오게 하기 위해 (double) 붙여줌 !
 		
 		System.out.println("\n==================");;
 		

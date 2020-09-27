@@ -2,7 +2,7 @@
 
 package c.modeling.ex04;
 
-public class Book {
+public class Book { // <물리적> 책을 추상화 & 캡슐화 한 것
 	
 	///Field - information hiding
 	private String title; //책 제목 
@@ -19,6 +19,7 @@ public class Book {
 	}
 	
 	///Method
+	//필드가 캡슐화 된 정보라서 get & set 으로 값 받아온다
 	public void setTitle(String title) {
 		this.title = title;
 	}

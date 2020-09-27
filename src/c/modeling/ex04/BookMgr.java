@@ -2,10 +2,11 @@
 
 package c.modeling.ex04;
 
-public class BookMgr {
+public class BookMgr { // <개념적> 
 
 	///Field
 	Book[] booklist; //책 객체 여러개를 저장할 수 있는 책 목록 배열
+	// BookMgr has-a Book < Association 관계 > 
 	
 	///Constructor
 	public BookMgr() {

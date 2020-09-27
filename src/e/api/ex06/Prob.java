@@ -13,10 +13,11 @@ public class Prob {
 		String newStr = ""; 
 		
 		for(int i = 0; i < str.length(); i++) {
+//			System.out.println(str.charAt(i));
 			if(str.charAt(i) == oldChar) {
 				newStr += newChar;
 			} else {
-				newStr += str.charAt(i);
+				newStr += str.charAt(i); //그대로
 			}
 		}
 		return newStr;
@@ -26,8 +27,10 @@ public class Prob {
 		
 		System.out.println("문자열에 특정문자 변경하는 테스트");
 		System.out.println("---------Sample 1 -------");
-		String str1 = myReplace("hello world", 'l', '*');
+//		String str1 = myReplace("hello world", 'l', '*');
+		String str1 = Prob.myReplace("hello world", 'l', '*');
 		System.out.println(str1);
+		System.out.println(str1.toString()); //toString() 생략된 구조!
 		
 		System.out.println("---------Sample 2 -------");
 		String str2 = myReplace("hello world", ' ', '-');

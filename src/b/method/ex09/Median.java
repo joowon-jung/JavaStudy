@@ -21,9 +21,10 @@ import java.util.Arrays;
 public class Median {
 	
 	
-	int median; 
 	
-	public int findMedian(int[] values) {
+	public static int findMedian(int[] values) {
+		
+		int median = 0; 
 
 		// 배열 index가 짝수 일 때
 		if (values.length % 2 == 0) {
@@ -64,16 +65,18 @@ public class Median {
 	
 	public static void main(String[] args) {
 		
-		Median median = new Median();
 		
 		int[] values1 = { 10, 4, 53, 63, 17, 37, 52, 16, 33, 65 };
-		System.out.println("input : " + Arrays.toString(values1));
-		System.out.println("median : " + median.findMedian(values1));
+		System.out.println("input : " + Arrays.toString(values1)); // Arrays 클래스 이름으로 접근 => static 메소드
+										// toString : [ , , , ] 로 출력하게 함!
+		System.out.println("median : " + findMedian(values1));
+									// static 메소드 : main 메소드 안에서 인스턴스 생성 안 하고 클래스 명으로 접근
+									// 같은 클래스 내에서는 클래스 명 제외하고 사용 가능 !
 		System.out.println("================================================");
 		
 		int[] values2 = { 32, 53, 52, 76, 15, 98, 76, 65, 36, 10 };
 		System.out.println("input : " + Arrays.toString(values2));
-		System.out.println("median : " + median.findMedian(values2));
+		System.out.println("median : " + Median.findMedian(values2));
 	}
 	
 

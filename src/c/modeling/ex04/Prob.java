@@ -12,7 +12,7 @@ public class Prob {
 
 	public static void main(String[] args) {
 		
-		Book[] booklist = new Book[5];
+		Book[] booklist = new Book[5]; // 객체 Array
 		
 		/*
 		생성자로 상태값 세팅해도 되고 setter 메소드로 상태값 세팅해도 됨
