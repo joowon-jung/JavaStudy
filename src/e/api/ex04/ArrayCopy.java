@@ -7,14 +7,18 @@
 
 package e.api.ex04;
 
-import java.util.Vector;
+import java.util.*;
 
 public class ArrayCopy {
 
 	// 스트링 배열에 있는 데이터를 Vector로 변환하는 프로그램
-	public Vector<String> moreToVector(String[] datas) {
+	public Vector <String> moreToVector(String[] datas) {
+	// public List <String> moreToVector(String[] datas) {
 		
 		Vector <String> vector = new Vector <String> ();
+		// List <String> vector = new Vector <String> ();
+		// List <String> arrayList = new ArrayList <String>(); 
+		// 두개 다 가능! List는 Vector, ArrayList의 상위 클래스이기 때문에
 		
 		for (int i = datas.length-1; i >= 0; i--) {
 			vector.add(datas[i]);
