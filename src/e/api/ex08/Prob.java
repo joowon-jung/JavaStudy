@@ -27,7 +27,6 @@ public class Prob {
 			
 			//int index = str1.indexOf(str2, start + 1); 왜 +1 ????
 			int index = str1.indexOf(str2, start); // 위치가 start인 것 부터 str2를 찾아줌
-			System.out.println(index);
 			if (index == -1) { // #이 더이상 없으면
 				end = str1.length() - 1; // 마지막 index까지 자르기 위해 -1함
 			}
