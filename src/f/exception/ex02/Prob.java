@@ -8,7 +8,7 @@ public class Prob {
 		try {
 			// 계좌번호, 잔고, 마이너스 통장유무 출력
 			System.out.println("0. 최초 계좌 상태");
-			System.out.println("[계좌정보]" + account01);
+			System.out.println("[계좌정보]" + account01); // account01.toString();k
 			
 			System.out.println("\n1. " + account01.getAccountNo() + " 계좌 200000 출금요청");
 			account01.withdraw(200000);

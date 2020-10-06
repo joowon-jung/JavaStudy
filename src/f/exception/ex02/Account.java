@@ -8,7 +8,7 @@ public class Account {
 	public int creditLineLimit; // 마이너스금액한도
 	public int balance; // 통장잔고
 
-	/// constructor
+	/// constructor - 다양한 상태값 세팅
 	public Account() {
 	}
 	
@@ -56,27 +56,17 @@ public class Account {
 	// 출금시 잔고부족 한 경우(마이너스통장의 경우 마이너스금액 한도 포함)
 	// "잔고부족 출금불가 합니다" 의 message를 갖는 java.lang.Exception 발생시킬 것
 	public void withdraw(int money) throws Exception {
-		
-		// 1. 통장 잔고 체크
-		if (balance < 0) { // 잔고 없음
-			
-			// 2. 마이너스통장 유무 체크
-			if (creditLine == true) { // 유 
-				
-				// 3. 마이너스통장 한도 체크
-				if (creditLineLimit - money < 0) {
-					throw new Exception("잔고부족 출금불가 합니다.");
-				}
-				
-				creditLineLimit -= money;
-			} else { // 무
-				throw new Exception("잔고부족 출금불가 합니다.");
-			}
-			
-		} else { // 잔고 있음
-			balance -= money;
+								// checked Exception 이니 반드시 예외처리 해줘야 함!
+								// unchecked Exception(Runtime Exception)은 try - catch 안 해줘도 됨!
+		if ( creditLine && ( creditLineLimit + balance ) < money ) {
+			// 마이너스 통장 이고, 마이너스통장한도 + 현재 통장 잔고 < 출금할 돈
+			throw new Exception("잔고부족 출금불가 합니다.");
 		}
-
+		if (! creditLine && balance < money ) {
+			// 마이너스 통장이 아니고, 현재 통장 잔고가 출금할 돈보다 적으면
+			throw new Exception("잔고부족 출금불가 합니다.");
+		}
+		this.balance -= money;
 	}
 
 	@Override
@@ -86,6 +76,11 @@ public class Account {
 		} else { // 마이너스통장이 아니면
 			return " 계좌번호 : " + accountNo + ", 잔고 : " + balance + " 원";
 		}
+		
+//		return " 계좌번호 : " + accountNo + ", 잔고 : " + balance + " 원" + 
+//				(creditLine ? "  [[ -" + creditLineLimit + "원 마이너스 통장 ]]" : " ");
+//				// (true 이면 ? 실행 : 아니면 이부분 실행)
+//		==> 3항연산자 사용하면 코딩 편리 but 가독성 떨어짐. if문 사용하면 가독성은 좋으나 코드가 길어짐. 편한대로 사용
 	}
 
 }
