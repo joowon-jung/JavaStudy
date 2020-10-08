@@ -12,16 +12,6 @@ import java.util.List;
  *  => ArrayList에 담았음 ! List를 이용하여 Vector, ArrayList 사용하면 편리 (다형성)
  */
 public class FileController {
-
-	///main method
-	public static void main(String[] args) throws Exception { // try - catch 안 하고 그냥 던짐!
-		FileController c = new FileController();
-		String oldf = "oldf.txt";
-		             // /Users/jungjoowon/eclipse-workspace/JavaStudy/src/g/io/ex01/oldf.txt => 절대경로
-					 // 이클립스는 default가 자바 프로젝트 안이니까 oldf.txt만 하면 자바 프로젝트 안의 파일이라는 뜻!
-		String newf = "newf.txt";
-		c.reverseLine(oldf, newf);
-	}
 	
 	// String 타입의 텍스트 형식 파일명을 입력받아 텍스트의 라인 순서를 '반대로' 하여
 	// 두 번째 인자인 출력할 String 타입의 텍스트 파일명으로 저장
@@ -73,5 +63,15 @@ public class FileController {
 //		bw.close();
 		
 		System.out.println("정상 실행!");
+	}
+	
+	///main method
+	public static void main(String[] args) throws Exception { // try - catch 안 하고 그냥 던짐!
+		FileController c = new FileController();
+		String oldf = "oldf.txt";
+		             // /Users/jungjoowon/eclipse-workspace/JavaStudy/src/g/io/ex01/oldf.txt => 절대경로
+					 // 이클립스는 default가 자바 프로젝트 안이니까 oldf.txt만 하면 자바 프로젝트 안의 파일이라는 뜻!
+		String newf = "newf.txt";
+		c.reverseLine(oldf, newf);
 	}
 }
