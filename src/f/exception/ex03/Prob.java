@@ -51,6 +51,7 @@ public class Prob {
 			book.setRentalPrice(rentalPrice);
 			
 		} else {
+			// ?
 			throw new DataFormatException(bookInfo[0] + "책 정보는 변환할 수 없는 데이터 포맷입니다.");
 		}
 
