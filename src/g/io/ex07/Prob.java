@@ -33,11 +33,11 @@ public class Prob {
 //				vector.add(data[2]); // 점수 
 				
 				// 레퍼런스 값 상태비교 => 무조건 equals() 사용해주기!
-				if ( ( data[1].equals("java") || data[1].equals("JAVA") )
-					&& ( Integer.parseInt(data[2]) >= 80 ) ) {
+				// 자바는 대소문자를 구별하는데, 소문자 java이던 대문자 JAVA이던 똑같은 java로 인식하려면
+				// equalsIgnoreCase 메소드 사용 ! => API 싸움 
+				if ( ( data[1].equalsIgnoreCase("java") )&& ( Integer.parseInt(data[2]) >= 80 ) ) {
 					vector.add("["+data[0]+", "+data[1]+", "+data[2]+", 수료]");
-				} else if ( ( data[1].equals("sql") || data[1].equals("SQL") )
-						&& ( Integer.parseInt(data[2]) >= 90 ) ) {
+				} else if ( ( data[1].equalsIgnoreCase("sql") )&& ( Integer.parseInt(data[2]) >= 90 ) ) {
 					vector.add("["+data[0]+", "+data[1]+", "+data[2]+", 수료]");
 				} else {
 					vector.add("["+data[0]+", "+data[1]+", "+data[2]+", 미수료]");
@@ -66,9 +66,9 @@ public class Prob {
 		Prob e = new Prob();
 		List scores = e.getList();
 		
-		for (int i = 0; i < scores.size(); i++) {
-			System.out.println(scores.get(i));
-		}
+//		for (int i = 0; i < scores.size(); i++) {
+//			System.out.println(scores.get(i));
+//		}
 		
 		//enhanced for loop - 제네릭 사용 안했으니까 Object로 받음 
 		for (Object i : scores) {
