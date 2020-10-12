@@ -72,7 +72,7 @@ public class Prob {
 		
 		//enhanced for loop - 제네릭 사용 안했으니까 Object로 받음 
 		for (Object i : scores) {
-			System.out.println(i);
+			System.out.println(i); 
 		}
 	}
 

@@ -28,7 +28,7 @@ public class Prob {
 					if (array[i] == array[j] || array[i] == 21) {
 						dupliationCheck = true;
 					}
-				}
+				} 
 			}
 		}
 		return array;
