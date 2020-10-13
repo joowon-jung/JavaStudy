@@ -41,6 +41,12 @@ public class prob {
 		
 		// 스캐너 클래스 안에 키보드를 준 것 !
 		Scanner keyboard = new Scanner(System.in);
+		// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// String abc = br.readLine();
+		// 이렇게 해도 되는데 스캐너를 쓰는 이유 : 위처럼 하면 readLine() 에서 String만 받을 수 있지만
+		// Scanner를 사용하면 nextInt, nextDouble 등 다양한 메소드들을 받을 수 있기 때문에!
+		
+		// Scanner : Real World에 스캔이라는 것을 추상화 & 표준화 한 객체 
 		
 		System.out.print("학번을 입력하세요 : ");
 		stdNum = keyboard.nextLine();
@@ -59,6 +65,12 @@ public class prob {
 		
 		try {
 			bw = new BufferedWriter(new FileWriter("grade.txt"));
+			
+			// PrintWriter 써도 됨! PrintWriter은 
+			// PrintWriter out = new PrintWriter("grade.txt"); 라고 쓸 수 있음.
+			// ()안에 파일 stream 이 없는데 어떻게? ex) new FileWriter이런게 없는데 어떻게?
+			// PrintWriter 에서는 생성자에 파일이름만 넣어줘도 필요한 중간 OutputStreamWriter를 작성해 줘서 
+			// 자동 생성된 것에 의해서 문자를 읽어 오는 것 !
 			
 			sum = kor + math + eng + java;
 			avg = sum / (double) 4;
@@ -80,6 +92,10 @@ public class prob {
 			bw.newLine();
 			bw.write("학점 : " + checkGrade(avg));
 			bw.write("\n----------------\n");
+		
+			bw.flush();
+			
+			System.out.println("파일을 출력합니다 .");
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

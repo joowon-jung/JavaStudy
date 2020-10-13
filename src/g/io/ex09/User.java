@@ -57,9 +57,11 @@ public class User {
 
 	@Override
 	public String toString() {
+		
 		return "이름 : " + name + ", 핸드폰 : " + cellularNumber + ", 성별 : " 
 				+ (male ? "남" : "여")
 				+ ", 주소 : " + address;
+
 	}
 
 }
