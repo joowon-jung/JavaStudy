@@ -68,9 +68,9 @@ public class prob {
 			
 			// PrintWriter 써도 됨! PrintWriter은 
 			// PrintWriter out = new PrintWriter("grade.txt"); 라고 쓸 수 있음.
-			// ()안에 파일 stream 이 없는데 어떻게? ex) new FileWriter이런게 없는데 어떻게?
-			// PrintWriter 에서는 생성자에 파일이름만 넣어줘도 필요한 중간 OutputStreamWriter를 작성해 줘서 
-			// 자동 생성된 것에 의해서 문자를 읽어 오는 것 !
+			// ()안에 파일 stream 이 없는데 어떻게? ex) new FileWriter 이런게 없는데 어떻게?
+			// PrintWriter 에서는 생성자에 파일이름만 넣어줘도 필요한 중간 OutputStreamWriter를 작성해 준다.
+			// 자동 생성된 스트림에 의해서 파일 이름만 적어줘도 문자를 읽어 오는 것 !
 			
 			sum = kor + math + eng + java;
 			avg = sum / (double) 4;
